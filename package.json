@@ -2,16 +2,18 @@
   "name": "cnepsfront",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "node serveur.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "^11.0.7",
+    "@angular/compiler-cli": "^11.0.9",
     "@angular/animations": "~11.0.3",
     "@angular/cdk": "^11.2.10",
     "@angular/common": "~11.0.3",
