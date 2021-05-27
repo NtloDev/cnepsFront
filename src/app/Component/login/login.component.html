@@ -1,0 +1,31 @@
+<div fxlayout="row wrap" fxLayoutAlign="center center" style="position: relative ; top: 50px">
+  <div fxFlex="40">
+    <h2>Bienvenue au CNEPS!</h2>
+    <img src="assets/images/loginbg.png">
+  </div>
+  <div fxFlex="40">
+    <h2>Veillez vous connecter...</h2>
+    <mat-card class="ConnexionBox">
+      <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="log-form-control">
+            <mat-label class="mat-title label" for="username">Username</mat-label>
+            <input matInput type="text" formControlName="username" [ngClass]=" { 'is-invalid': submitted &&
+f.username.errors }" />
+            <h4 style="color: red ; font-size: 8px ; width: 160px" *ngIf="submitted && f.username.errors && f.username.errors.required" class="suggestion">Username is required</h4>
+          </mat-form-field>
+          <mat-form-field class="log-form-control">
+            <mat-label class="mat-title label" for="password">Password</mat-label>
+            <input matInput type="password" formControlName="password" [ngClass]=" { 'is-invalid': submitted &&
+f.password.errors }" />
+            <h4 style="color: red ; font-size: 8px ; width: 160px"  *ngIf="submitted && f.username.errors && f.password.errors.required" class="suggestion">Password is required</h4>
+          </mat-form-field>
+          <button [disabled]="loading" class="seConnecter">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1" ></span>
+            Se connecter
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

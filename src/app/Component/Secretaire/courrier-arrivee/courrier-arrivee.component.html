@@ -1,0 +1,34 @@
+<form [formGroup]="arriveeForm" (ngSubmit)="onSubmit()" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+      <mat-grid-tile>
+        <div class="controles-container">
+          <mat-form-field>
+            <input formControlName="expediteur" matInput placeholder="Expediteur" >
+            <mat-error>Ce champ est requis !</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="date" formControlName="dateArrivee" matInput placeholder="Date d'arrivée" >
+            <mat-error>Ce champ est requis !</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="date" formControlName="dateCorrespondance" matInput placeholder="Date Correspondance" >
+            <mat-error>Ce champ est requis !</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="controles-container">
+          <mat-form-field>
+            <input formControlName="numeroCorrespondance" matInput placeholder="Numero Correspondance" >
+            <mat-error>Ce champ est requis !</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="objet" matInput placeholder="Objet" >
+            <mat-error>Ce champ est requis !</mat-error>
+          </mat-form-field>
+            <input multiple type="file" (change)="OnAddpieceJointe($event)" style="position: relative ; margin-top: 35px ; top: -17px ; "  type="file" formControlName="pieceJointe" placeholder="Piece Jointe" >
+        </div>
+      </mat-grid-tile>
+  </mat-grid-list>
+  <button style="position: relative ; float: right" [disabled]="arriveeForm.invalid" mat-raised-button color="primary" type="submit">Valider</button>
+</form>

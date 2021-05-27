@@ -1,0 +1,38 @@
+<form [formGroup]="departForm" (ngSubmit)="onSubmit2()" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="destinataire" matInput placeholder="Destinataire" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="date" formControlName="dateDeDepart" matInput placeholder="Date de depart" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="objet" matInput placeholder="Objet" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="numeroArchive" matInput placeholder="Numero Archive" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="observations" matInput placeholder="Observations" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="numeroCorrespondance" matInput placeholder="Numero De Correspondance" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <input multiple type="file" (change)="OnAddpieceJointe($event)" style="position: relative ; margin-top: 35px ; top: -17px ; "  type="file" formControlName="pieceJointe" placeholder="Piece Jointe" >
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <button style="position: relative ; float: right" [disabled]="departForm.invalid" mat-raised-button color="primary" type="submit">Valider</button>
+</form>

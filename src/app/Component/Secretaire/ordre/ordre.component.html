@@ -1,0 +1,37 @@
+<form [formGroup]="ordreForm" (ngSubmit)="onSubmit()" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="nomComplet" matInput placeholder="A" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="fonction" matInput placeholder="Fonction" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="date" formControlName="date" matInput placeholder="Date" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="lieu" matInput placeholder="Lieu" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="intitule" matInput placeholder="Intitulé" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="description" matInput placeholder="Description" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <button style="position: relative ; float: right" [disabled]="ordreForm.invalid" mat-raised-button color="primary" type="submit">Valider</button>
+</form>

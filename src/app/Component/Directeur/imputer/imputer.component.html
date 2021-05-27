@@ -1,0 +1,44 @@
+<form [formGroup]="imputerForm" (ngSubmit)="onSubmit()" class="normal-form">
+  <div fxLayout="row">
+    <div fxFlex="70">
+      <h2>DIVISIONS ET BUREAUX</h2>
+      <mat-grid-list cols="1" rowHeight="300px">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <mat-checkbox formControlName="etudesInnovationsPedagogiques">Etudes et innovations pedagogiques</mat-checkbox>
+            <mat-checkbox formControlName="accueilStages">Accueil et stages</mat-checkbox>
+            <mat-checkbox formControlName="intendance">Intendance</mat-checkbox>
+            <mat-checkbox formControlName="surveillantGeneral">Surveillant General</mat-checkbox>
+            <mat-checkbox formControlName="equipePedagogique">Equipe Pedagogique</mat-checkbox>
+            <mat-checkbox formControlName="programmeUtilisationTerrainsGazonnes">Programmation utilisation des terrains gazonnes</mat-checkbox>
+            <mat-checkbox formControlName="emploiSalles">emploi des salles</mat-checkbox>
+            <mat-checkbox formControlName="entretientMaintenance">Entretient et maintenance</mat-checkbox>
+            <mat-checkbox formControlName="comptabiliteMatieres">comptabilite des matieres</mat-checkbox>
+            <mat-checkbox formControlName="personnelSolde">Personnel et solde</mat-checkbox>
+            <mat-checkbox formControlName="assistantDirection">Assistant de direction</mat-checkbox>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div fxFlex="50">
+      <h2>POUR:</h2>
+      <mat-grid-list cols="1" rowHeight="300px">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <mat-checkbox formControlName="diffusion">Diffusion</mat-checkbox>
+            <mat-checkbox formControlName="menParler">M'en parler</mat-checkbox>
+            <mat-checkbox formControlName="etudeAvis">Etude et avis</mat-checkbox>
+            <mat-checkbox formControlName="representationCompteRendu">Representation et compte rendu</mat-checkbox>
+            <mat-checkbox formControlName="attribution">Attribution</mat-checkbox>
+            <mat-checkbox formControlName="information">Information</mat-checkbox>
+            <mat-checkbox formControlName="suiteDonner">Suite a donner</mat-checkbox>
+            <mat-checkbox formControlName="classement">Classement</mat-checkbox>
+            <mat-checkbox formControlName="autres">Autres</mat-checkbox>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+
+  <button style="position: relative ; float: right" [disabled]="imputerForm.invalid" mat-raised-button color="primary" type="submit">Valider</button>
+</form>

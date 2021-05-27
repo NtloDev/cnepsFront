@@ -1,0 +1,31 @@
+<form [formGroup]="dossierForm" (ngSubmit)="onSubmit()" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <mat-label>Dossier</mat-label>
+          <mat-select formControlName="libelle" [(ngModel)]="selectedValue" >
+            <mat-option *ngFor="let dossier1 of dossier" [value]="dossier1">
+              {{dossier1}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="date" formControlName="date" matInput placeholder="Date" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="intitule" matInput placeholder="Intitulé" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <input multiple type="file" (change)="OnAddpieceJointe($event)" style="position: relative ; margin-top: 35px ; top: -17px ; "  type="file" formControlName="pieceJointe" placeholder="Piece Jointe" >
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <button style="position: relative ; float: right" [disabled]="dossierForm.invalid" mat-raised-button color="primary" type="submit">Valider</button>
+</form>

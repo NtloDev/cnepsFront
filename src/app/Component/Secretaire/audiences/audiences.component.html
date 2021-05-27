@@ -1,0 +1,44 @@
+<form [formGroup]="audienceForm" (ngSubmit)="onSubmit3()" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <mat-label>Mois</mat-label>
+          <mat-select formControlName="mois" [(ngModel)]="selectedValue" >
+            <mat-option *ngFor="let mois1 of mois" [value]="mois1">
+              {{mois1}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <form [formGroup]="audience1">
+        <mat-form-field>
+          <input type="date" formControlName="jour" matInput placeholder="Jour" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="time" formControlName="debutAudience" matInput placeholder="Debut Audience" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="time" formControlName="finAudience" matInput placeholder="Fin Audience" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field>
+          </form>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <form [formGroup]="audience1">
+        <mat-form-field>
+          <input formControlName="demandeur" matInput placeholder="Demandeur" >
+          <mat-error>Ce champ est requis !</mat-error>
+        </mat-form-field><br>
+          <label>Observations</label>
+          <input type="checkbox" formControlName="observations" placeholder="Observations" >
+        </form>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <button style="position: relative ; float: right" mat-raised-button color="primary" type="submit">Valider</button>
+</form>
